@@ -1,0 +1,52 @@
+@import '@/assets/style/unit/color.scss';
+
+// 减小弹出菜单的项目高度
+.el-menu--popup {
+  .el-menu-item {
+    height: 36px;
+    line-height: 36px;
+  }
+  .el-submenu__title {
+    height: 36px;
+    line-height: 36px;
+  }
+}
+// 修改默认导航菜单样式
+
+// 整体样式
+.el-container{
+  
+}
+.el-header{
+  line-height: 60Px;
+  // background-color: #252b3d;
+  color: $color-primary;
+}
+.el-aside{
+  // position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  min-height: 500px;
+  height: 100%;
+  // background-color: #545c64;
+  // color: $color-primary;
+  .el-menu{
+    border: none;
+  }
+  .aside-logo{
+    text-align: center;
+    color: $color-primary;
+    height: 60Px;
+    line-height: 60Px;
+    font-weight: bold;
+  }
+}
+.el-main{
+  position: relative;
+  // left: 200Px;
+  background-color: #F5F7FB;
+  .el-breadcrumb{
+    padding-bottom: 50px;
+  }
+}
