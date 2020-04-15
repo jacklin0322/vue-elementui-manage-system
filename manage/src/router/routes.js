@@ -18,7 +18,8 @@ const frameIn = [
         path: '/index',
         name: 'index',
         meta: {
-          auth: true
+          auth: true,
+          title: '统计分析'
         },
         component: _import('system/index')
       },
@@ -30,7 +31,7 @@ const frameIn = [
           auth: true,
           title: '员工管理'
         },
-        component: _import('system/index')
+        component: _import('system/staff')
       }
     ]
   }

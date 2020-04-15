@@ -124,7 +124,7 @@
 
     <el-main>
       <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/' }">系统</el-breadcrumb-item>
         <el-breadcrumb-item><a href="/">{{this.$route.meta.title}}</a></el-breadcrumb-item>
       </el-breadcrumb>
       <router-view/>

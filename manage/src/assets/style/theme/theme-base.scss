@@ -12,6 +12,44 @@
   }
 }
 // 修改默认导航菜单样式
+.el-card{
+  font-size: 38px;
+  padding: 50px 0;
+  position: relative;
+  span{
+    color: #ffffff;
+    // font-weight: lighter;
+    font-style: normal;
+  }
+  em{
+    color: #ffffff;
+    font-weight: lighter;
+    font-style: normal;
+  }
+  span.el-card-sp-title{
+    display: block;
+    font-weight: lighter;
+    margin-bottom: 50px;
+  }
+  label{
+    font-size: #666666;
+    display: inline-block;
+    margin: 50px 0;
+    font{
+      font-size: 24px;
+      color: #999999;
+    }
+  }
+  i{
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 72Px;
+    color: #ffffff;
+    opacity: .3;
+  }
+}
 
 // 整体样式
 .el-container{

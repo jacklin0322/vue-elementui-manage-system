@@ -3,6 +3,7 @@ import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // import 'lib-flexible'
 import App from './App.vue'
+import echarts from 'echarts'
 
 // store
 import store from '@/store/index'
@@ -12,7 +13,8 @@ import router from './router'
 import { frameInRoutes } from '@/router/routes'
 
 Vue.config.productionTip = false
-Vue.use(Element);
+Vue.prototype.$echarts = echarts
+Vue.use(Element)
 
 new Vue({
   router,
