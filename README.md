@@ -15,3 +15,8 @@ npm i element-ui -S
 ```bash
 npm install px2rem-loader  lib-flexible --save
 ```
+#### 3.echarts
+
+```bash
+npm install echarts --save
+```
