@@ -1,18 +1,20 @@
 <template>
   <el-container style="min-height: 500px; height: 100%; border: 1px solid #eee">
-
   <el-aside style="width: auto;max-width: 200px">
     <div class="aside-logo" :style="isCollapse?'font-size: 12px':''">EA-Admin</div>
-    <el-menu class="el-menu-vertical-demo" :default-openeds="[]" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
-    <!-- <el-menu :default-openeds="['1', '3']"> -->
+    <el-menu class="el-menu-vertical-demo"
+      :default-active="defaultActive"
+      router unique-opened
+      :collapse="isCollapse" 
+      @open="handleOpen" @close="handleClose">
       <el-submenu index="1">
         <template slot="title">
           <i class="el-icon-setting"></i>
           <span slot="title">系统设置</span>
         </template>
-        <el-submenu index="1-1">
+        <el-submenu index="/">
           <template slot="title">员工管理</template>
-          <el-menu-item index="1-1-1">员工列表</el-menu-item>
+          <el-menu-item index="/staff">员工列表</el-menu-item>
           <el-menu-item index="1-1-2">部门列表</el-menu-item>
           <el-menu-item index="1-1-3">组织列表</el-menu-item>
         </el-submenu>
@@ -54,7 +56,7 @@
 
       <el-submenu index="5">
         <template slot="title">
-          <i class="el-icon-s-order"></i>
+          <i class="el-icon-date"></i>
           <span slot="title">课程管理</span>
         </template>
         <el-submenu index="5-2">
@@ -90,7 +92,7 @@
 
       <el-submenu index="6">
         <template slot="title">
-          <i class="el-icon-s-order"></i>
+          <i class="el-icon-s-data"></i>
           <span slot="title">财务管理</span>
         </template>
         <el-menu-item-group>
@@ -119,60 +121,46 @@
       </el-dropdown>
       <span>王小虎</span>
     </el-header>
+
     <el-main>
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item><a href="/">系统管理</a></el-breadcrumb-item>
+        <el-breadcrumb-item><a href="/">{{this.$route.meta.title}}</a></el-breadcrumb-item>
       </el-breadcrumb>
-
-      <el-table v-loading="loading" :data="tableData">
-        <el-table-column prop="date" label="日期" width="140">
-        </el-table-column>
-        <el-table-column prop="name" label="姓名" width="120">
-        </el-table-column>
-        <el-table-column prop="address" label="地址">
-        </el-table-column>
-      </el-table>
-      <el-pagination
-      background
-      layout="prev, pager, next"
-      :total="50" style="text-align: right">
-    </el-pagination>
+      <router-view/>
     </el-main>
   </el-container>
 </el-container>
-
 </template>
 
 <script>
 export default {
   name: 'ea-layoutCommon',
   data() {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    };
     return {
-      tableData: Array(10).fill(item),
-      isCollapse: false,
-      loading: true
+      isCollapse: false
     }
   },
-  mounted() {
-    setTimeout(()=>{
-      this.loading = false
-    },800)
+  watch: {
+    $route () {
+      this.setCurrentRoute()
+    }
+  },
+  created () {
+    this.setCurrentRoute()
   },
   methods: {
+    setCurrentRoute () {
+      this.defaultActive = this.$route.path //关键   通过他就可以监听到当前路由状态并激活当前菜单
+    },
     changeCollapse() {
       this.isCollapse = !this.isCollapse
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     }
   }
 }

@@ -15,10 +15,20 @@ const frameIn = [
     children: [
       // 首页
       {
-        path: 'index',
+        path: '/index',
         name: 'index',
         meta: {
           auth: true
+        },
+        component: _import('system/index')
+      },
+      //员工管理
+      {
+        path: '/staff',
+        name: 'staff',
+        meta: {
+          auth: true,
+          title: '员工管理'
         },
         component: _import('system/index')
       }

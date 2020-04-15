@@ -1,30 +1,52 @@
 <template>
-  <div class="hello">
-    <el-container>
-      <el-header class="ea-text-right">Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>Main
-            <h1>{{ msg }}</h1>
-          </el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
-
-  </div>
+  <el-container>
+    <el-main>
+      <el-table v-loading="loading" :data="tableData">
+        <el-table-column prop="date" label="日期" width="140">
+        </el-table-column>
+        <el-table-column prop="name" label="姓名" width="120">
+        </el-table-column>
+        <el-table-column prop="address" label="地址">
+        </el-table-column>
+      </el-table>
+      <!-- @size-change="handleSizeChange"
+      @current-change="handleCurrentChange" -->
+      <el-pagination
+        :current-page="currentPage"
+        :page-sizes="[10]"
+        :page-size="10"
+        layout="total, sizes, prev, pager, next"
+        :total="100">
+      </el-pagination>
+      
+    </el-main>
+  </el-container>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+  data() {
+    const item = {
+      date: '2016-05-02',
+      name: '王小虎',
+      address: '上海市普陀区金沙江路 1518 弄'
+    }
+    return {
+      currentPage: 1,
+      loading: true,
+      tableData: Array(10).fill(item)
+    }
+  },
+  mounted() {
+    setTimeout(()=>{
+      this.loading = false
+    },800)
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+.el-main{
+  padding: 0;
+}
 </style>

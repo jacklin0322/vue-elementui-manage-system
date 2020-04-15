@@ -20,6 +20,10 @@
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200Px;
 }
+.el-menu--popup .el-menu-item{
+  height: 50Px;
+  line-height: 50Px;
+}
 .el-menu-item-group__title{
   color: #C0C4CC;
 }
@@ -54,4 +58,7 @@
 }
 .el-submenu__title:hover,.el-menu-item:hover, .el-menu-item.is-active{
   color: #108ee9;
+}
+.el-pagination{
+  margin: 50px 0;
 }
