@@ -10,12 +10,7 @@
 ```bash
 npm i element-ui -S  
 ```
-#### 2.Dayjs 
-
-```bash
-npm install dayjs --save
-```
-#### 3.px2rem-loader lib-flexble
+#### 2.px2rem-loader lib-flexble
 
 ```bash
 npm install px2rem-loader  lib-flexible --save
