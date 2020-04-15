@@ -9,35 +9,49 @@
     }
   }
 }
-
 .el-menu--horizontal {
   border-bottom: none !important;
 }
-
 .el-tabs__item:focus.is-active.is-focus:not(:active) {
   box-shadow: none !important;
 }
 
 // 修改默认导航菜单样式
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200Px;
+}
+.el-menu-item-group__title{
+  color: #C0C4CC;
+}
 .el-submenu{
-  .el-submenu__title,.el-menu-item{
-    color: #999999;
+  >.el-submenu__title{
+    color: #333333;
+  }
+  >.el-menu{
+    .el-submenu__title{
+      font-size: 13px;
+      color: #8d8d8d;
+    }
+  }
+  .el-menu-item{
+    font-size: 13px;
+    color: #8d8d8d;
   }
 }
 .el-submenu.is-active.is-opened{
   >.el-submenu__title{
-    color: #333333;
+    color: #108ee9;
   }
   .el-submenu.is-active.is-opened{
-    color: #333333;
+    color: #108ee9;
     .el-submenu__title{
-      color: #333333;
+      color: #108ee9;
     }
     .el-menu-item.is-active{
-      color: #333333;
+      color: #108ee9;
     }
   }
 }
-.el-submenu__title:hover,.el-menu-item:hover{
-  color: #333333;
+.el-submenu__title:hover,.el-menu-item:hover, .el-menu-item.is-active{
+  color: #108ee9;
 }
