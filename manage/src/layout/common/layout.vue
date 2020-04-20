@@ -1,7 +1,7 @@
 <template>
   <el-container style="min-height: 500px; height: 100%; border: 1px solid #eee">
   <el-aside style="width: auto;max-width: 200px">
-    <div class="aside-logo" :style="isCollapse?'font-size: 12px':''">EA-Admin</div>
+    <div class="aside-logo" :style="isCollapse?'font-size: 12px':''">EL-Admin</div>
     <el-menu class="el-menu-vertical-demo"
       :default-active="defaultActive"
       router unique-opened
@@ -116,7 +116,7 @@
         <i class="el-icon-setting" style="margin-right: 10px"></i>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>修改资料</el-dropdown-item>
-          <el-dropdown-item>退出账号</el-dropdown-item>
+          <el-dropdown-item @click.native="logOff">退出账号</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
       <span>王小虎</span>
@@ -134,6 +134,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 export default {
   name: 'ea-layoutCommon',
   data() {
@@ -150,7 +151,16 @@ export default {
     this.setCurrentRoute()
   },
   methods: {
-    setCurrentRoute () {
+    ...mapActions('account', [
+      'logout'
+    ]),
+    // 退出登录
+    logOff() {
+      this.logout({
+        confirm: false
+      })
+    },
+    setCurrentRoute() {
       this.defaultActive = this.$route.path //关键   通过他就可以监听到当前路由状态并激活当前菜单
     },
     changeCollapse() {

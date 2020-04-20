@@ -1,19 +1,19 @@
-// import cookies from './util.cookies'
+import cookies from './util.cookie.js'
 // import db from './util.db.js'
-// import log from './util.log'
+import log from './util.log.js'
 
-// const util = {
-//   cookies,
-//   db,
-//   log
-// }
+const util = {
+  cookies,
+  // db,
+  log
+}
 
 /**
  * @description 更新标题
  * @param {String} title 标题
  */
 util.title = function (titleText) {
-  const processTitle = process.env.VUE_APP_TITLE || 'EA-Admin'
+  const processTitle = process.env.VUE_APP_TITLE || 'EL-Admin'
   window.document.title = `${processTitle}${titleText ? ` | ${titleText}` : ''}`
 }
 
@@ -25,10 +25,10 @@ util.open = function (url) {
   var a = document.createElement('a')
   a.setAttribute('href', url)
   a.setAttribute('target', '_blank')
-  a.setAttribute('id', 'ea-link-temp')
+  a.setAttribute('id', 'el-link-temp')
   document.body.appendChild(a)
   a.click()
-  document.body.removeChild(document.getElementById('ea-link-temp'))
+  document.body.removeChild(document.getElementById('el-link-temp'))
 }
 
 export default util

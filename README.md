@@ -13,9 +13,19 @@ npm i element-ui -S
 #### 2.px2rem-loader lib-flexble
 
 ```bash
-npm install px2rem-loader  lib-flexible --save
+npm install px2rem-loader lib-flexible --save
 ```
-#### 3.echarts
+
+#### 3.Axios
+```bash
+npm install axios --save
+```
+#### 4.JS-Cookie
+```bash
+npm install js-cookie --save
+```
+
+#### 5.echarts
 
 ```bash
 npm install echarts --save

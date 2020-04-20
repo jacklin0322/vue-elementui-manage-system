@@ -35,7 +35,6 @@
         <el-col :span="12">
           <label>站点访问来源 <font>本月 / 2020-4</font></label>
           <div id="echartsBar" style="width: 600px;height:400px;"></div>
-
         </el-col>
         <el-col :span="12">
           <label>成交统计 <font>本月 2020-4</font></label>

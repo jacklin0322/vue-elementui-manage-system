@@ -44,8 +44,8 @@ const frameOut = [
   // 登录
   {
     path: '/login',
-    name: 'login'
-    // component: import('system/login')
+    name: 'login',
+    component: _import('system/login')
   }
 ]
 

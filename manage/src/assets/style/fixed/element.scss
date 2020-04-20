@@ -20,10 +20,10 @@
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200Px;
 }
-.el-menu--popup .el-menu-item{
-  height: 50Px;
-  line-height: 50Px;
-}
+// .el-menu--popup .el-menu-item{
+//   height: 50Px;
+//   line-height: 50Px;
+// }
 .el-menu-item-group__title{
   color: #C0C4CC;
 }
@@ -33,12 +33,12 @@
   }
   >.el-menu{
     .el-submenu__title{
-      font-size: 13px;
+      // font-size: 13px;
       color: #8d8d8d;
     }
   }
   .el-menu-item{
-    font-size: 13px;
+    // font-size: 13px;
     color: #8d8d8d;
   }
 }
